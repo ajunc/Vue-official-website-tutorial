@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed 属性和 watcher</title>
+    <script src="Vue.js-v2.5.17.js"></script>
+</head>
+<body>
+    <div id="example">
+        <p>初始 message 是: {{ message }}</p>
+        <p>计算后的翻转 message 是："{{ reverseMessage}}"</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                message: 'Hello'
+            },
+            computed: {
+                reverseMessage: function () {
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        });
+    </script>
+</body>
+</html>
